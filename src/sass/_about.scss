@@ -1,0 +1,144 @@
+.about {
+  padding-top: 60px;
+  padding-bottom: 40px;
+  background-color: #fff5f6;
+  background-image: url(../images/about-milk-1x.png);
+  background-position: center 595px;
+  background-repeat: no-repeat;
+
+  @include tablet {
+    background-image: none;
+    padding-bottom: 60px;
+  }
+
+  @include desktop {
+    padding-top: 60px;
+    padding-bottom: 40px;
+    background-image: none;
+  }
+}
+
+.about__container {
+  @include tablet {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  @include desktop {
+    background-image: url(../images/about-milk-desk-1x.png);
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+}
+
+.about__container-text {
+  margin-top: 40px;
+
+  @include tablet {
+    margin-top: 0;
+    margin-left: 30px;
+  }
+
+  @include desktop {
+    margin-left: 100px;
+  }
+}
+
+.about__pic {
+  @include tablet {
+    width: 335px;
+  }
+  @include desktop {
+    width: 500px;
+  }
+}
+
+.about__top-text {
+  font-family: 'Titan One';
+  @include font(400, 18px, 1.16, null, var(--accent-color));
+  text-align: center;
+  text-transform: uppercase;
+  margin-bottom: 15px;
+
+  @include tablet {
+    @include font(400, 26px, 1.15, null, var(--accent-color));
+  }
+
+  @include desktop {
+    @include font(400, 30px, 1.13, 0.04em, var(--accent-color));
+  }
+}
+
+.about__title {
+  font-family: 'Titan One';
+  @include font(400, 34px, 1.14, 0.04em, var(--title-text-color));
+  text-align: center;
+  margin-bottom: 30px;
+
+  @include tablet {
+    @include font(400, 48px, 1.14, 0.04em, var(--title-text-color));
+    margin-bottom: 40px;
+  }
+
+  @include desktop {
+    @include font(400, 58px, 1.14, 0.06em, var(--title-text-color));
+    margin-bottom: 60px;
+  }
+}
+
+.about__text {
+  width: 220px;
+  @include font(500, 12px, 1.62, null, #000000);
+  // margin-top: 40px;
+  margin-bottom: 40px;
+
+  @include tablet {
+    width: 335px;
+    @include font(500, 14px, 1.76, null, #000000);
+    margin-top: 0;
+  }
+
+  @include desktop {
+    width: 465px;
+    @include font(500, 16px, 1.76, 0.04em, #000000);
+  }
+}
+
+.about__bottom-text {
+  width: 220px;
+  @include font(500, 12px, 1.62, null, #907e82);
+  margin-bottom: 20px;
+
+  @include tablet {
+    width: 335px;
+    @include font(500, 14px, 1.76, 0.04em, #907e82);
+  }
+
+  @include desktop {
+    width: 465px;
+    @include font(500, 14px, 1.94, 0.04em, #907e82);
+    margin-bottom: 40px;
+  }
+}
+
+.about__btn {
+  width: 175px;
+  height: 45px;
+  font-family: inherit;
+  @include font(700, 14px, 1.28, null, #d41443);
+  align-items: center;
+  text-align: center;
+  background-color: #ffffff;
+  border-radius: 22px;
+  border: none;
+
+  @include tablet {
+    @include font(700, 16px, 1.3, null, #d41443);
+  }
+
+  &:hover,
+  &:focus {
+    color: #ffffff;
+    background-color: var(--title-text-color);
+  }
+}

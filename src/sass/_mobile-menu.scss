@@ -1,0 +1,324 @@
+// Start basic styles placeholder
+
+body {
+  font-family: 'DM Sans';
+  font-style: normal;
+}
+
+.list {
+  list-style: none;
+}
+
+.link {
+  text-decoration: none;
+  color: inherit;
+}
+
+// End basic styles placeholder
+
+// Animation styles
+
+@-webkit-keyframes cowabunga {
+  from {
+    -webkit-transform: rotate(60deg);
+  }
+
+  to {
+    -webkit-transform: rotate(0deg);
+  }
+}
+
+@keyframes cowabunga {
+  from {
+    transform: rotate(60deg);
+  }
+
+  to {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes splat {
+  from {
+    transform: scale(0);
+  }
+
+  70% {
+    transform: scale(1.7);
+  }
+
+  to {
+    transform: scale(1);
+  }
+}
+
+@-webkit-keyframes splat {
+  from {
+    -webkit-transform: scale(0);
+  }
+
+  70% {
+    -webkit-transform: scale(1.7);
+  }
+
+  to {
+    -webkit-transform: scale(1);
+  }
+}
+
+// Animation styles
+
+.mobile-button {
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &__burger {
+    // Placehoder. Delete.
+    margin: 0 auto;
+    fill: red;
+  }
+
+  &__close-mobile {
+    width: 14px;
+    height: 14px;
+    margin-left: auto;
+    fill: #fff;
+    margin-bottom: 26px;
+  }
+
+  &__close-mobile:hover,
+  &__close-mobile:focus {
+    fill: #d41443;
+  }
+
+  &__buy {
+    justify-items: baseline;
+    width: 100%;
+    height: 44px;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 1.3;
+    background-color: #fff;
+    color: #d41443;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 22px;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+      background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  &__buy:hover,
+  &__buy:focus {
+    background-color: #ecebeb;
+  }
+
+  &__buy::after {
+    content: '';
+    display: inline-block;
+    width: 6px;
+    height: 8px;
+    margin-left: 15px;
+    margin-top: 3px;
+    background-color: currentColor;
+    -webkit-mask-image: url(../images/gallery-menu/buy-arrow.svg);
+    mask-image: url(../images/gallery-menu/buy-arrow.svg);
+    -webkit-mask-size: contain;
+    mask-size: contain;
+    -webkit-mask-position: center;
+    mask-position: center;
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+  }
+}
+
+.mobile-menu {
+  // Placeholder. Delete. Instead of it set your header class to "display: relative;" and set "top:" of mobile-menu__container to 0 -header's height
+  // display: relative;
+
+  &__container {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    max-width: 250px;
+    height: calc(101vh + 50px);
+    margin-top: 0;
+    // You can adjust attachment of the menu to the top of the screen by setting a margin-top with a negative value equal to header's height
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 1.28;
+    z-index: 999;
+    overflow: hidden;
+    pointer-events: none;
+    @media screen and (min-width: 1200px) {
+      display: none;
+    }
+  }
+
+  &__container.is-open {
+    pointer-events: all;
+  }
+
+  &__menu {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: calc(100% - 50px);
+    background-color: #e17992;
+    transform: translateY(-170vh);
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  &__menu.is-open {
+    transform: translateY(0);
+
+    &::before {
+      content: '';
+      position: absolute;
+      bottom: -49px;
+      left: 0;
+      width: 100%;
+      height: 50px;
+      background-color: #e17992;
+      -webkit-clip-path: polygon(0 0, 50% 0, 0 100%);
+      clip-path: polygon(0 0, 50% 0, 0 100%);
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -49px;
+      right: 0;
+      width: 100%;
+      height: 50px;
+      background-color: #e17992;
+      -webkit-clip-path: polygon(50% 0%, 100% 0, 100% 100%);
+      clip-path: polygon(50% 0%, 100% 0, 100% 100%);
+    }
+  }
+
+  &__buttons {
+    display: inherit;
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  &__list {
+    width: 100%;
+    color: #fff;
+  }
+
+  &__list-item {
+    width: 100%;
+    border-top: 1px solid #e18298;
+    border-bottom: 1px solid #e18298;
+  }
+
+  &__link {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 42px;
+    padding-left: 20px;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  &__link-current {
+    color: #d41443;
+  }
+
+  &__link:hover,
+  &__link:focus {
+    color: #d41443;
+  }
+
+  &__pictures {
+    position: relative;
+    pointer-events: none;
+    width: 100%;
+    height: calc(100vh * 0.3);
+    margin-top: 5%;
+  }
+
+  &__cow {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    max-height: auto;
+    width: 50%;
+    display: none;
+
+    &.is-open {
+      display: block;
+      transform-origin: right bottom;
+      -webkit-animation: cowabunga 720ms cubic-bezier(0.4, 0, 0.2, 1);
+      animation: cowabunga 720ms cubic-bezier(0.4, 0, 0.2, 1);
+    }
+  }
+
+  &__splat1 {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin-right: -20%;
+    margin-bottom: 15%;
+    max-height: auto;
+    width: 65%;
+    display: none;
+
+    &.is-open {
+      display: block;
+      transform: scale(0);
+      -webkit-animation: splat 250ms cubic-bezier(0.4, 0, 0.2, 1) 800ms 1 normal
+        forwards;
+      animation: splat 250ms cubic-bezier(0.4, 0, 0.2, 1) 800ms 1 normal
+        forwards;
+    }
+  }
+
+  &__splat2 {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin-right: -5%;
+    margin-bottom: 3%;
+    max-height: auto;
+    width: 80%;
+    display: none;
+
+    &.is-open {
+      display: block;
+      transform: scale(0);
+      -webkit-animation: splat 250ms cubic-bezier(0.4, 0, 0.2, 1) 1000ms 1
+        normal forwards;
+      animation: splat 250ms cubic-bezier(0.4, 0, 0.2, 1) 1000ms 1 normal
+        forwards;
+    }
+  }
+
+  &__splat3 {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin-right: 45%;
+    margin-bottom: 10%;
+    max-height: auto;
+    width: 40%;
+    display: none;
+
+    &.is-open {
+      display: block;
+      transform: scale(0);
+      -webkit-animation: splat 300ms cubic-bezier(0.4, 0, 0.2, 1) 1200ms 1
+        normal forwards;
+      animation: splat 300ms cubic-bezier(0.4, 0, 0.2, 1) 1200ms 1 normal
+        forwards;
+    }
+  }
+}
