@@ -2,17 +2,17 @@
   "name": "parcel-project-template",
   "version": "2.0.0",
   "description": "",
-  "homepage": "https://valerii-mykh.github.io/Ice-cream/",
+  "homepage": "https://Yura-111.github.io/ice-cream-project",
   "scripts": {
     "start": "parcel src/*.html",
-    "build": "parcel build src/*.html --public-url /Ice-cream/"
+    "build": "parcel build src/*.html --public-url /ice-cream-project/"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/goitacademy/parcel-project-template.git"
   },
   "keywords": [],
-  "author": "Valerii <valerii_mih@ukr.net>",
+  "author": "Alexander Repeta <alexander.repeta@gmail.com>",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/goitacademy/parcel-project-template/issues"
