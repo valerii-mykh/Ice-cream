@@ -29,7 +29,6 @@
     })();
 
 
-
     (() => {
         const refs = {
             openManuBtn: document.querySelector("[data-manu-ice-coffee-open]"),
